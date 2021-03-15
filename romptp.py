@@ -54,9 +54,9 @@ if __name__ == "__main__":
         print("Not enough arguments!")
         exit(-2)
     try:
-        if boardModel == "s":
+        if boardModel == "-s":
             chunkSize = 16
-        if boardModel == "k":
+        if boardModel == "-k":
             chunkSize = 24
     except:
         print("Invalid board model!")

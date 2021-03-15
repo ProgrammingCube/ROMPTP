@@ -39,7 +39,7 @@ def convertToPtp(bin_f, ptp_f, address, size, chunkSize):
         ptp_f.write(";00")
         ptp_f.write('{0:0{1}X}'.format(blocks, 4))
         ptp_f.write('{0:0{1}X}'.format((blocks >> 8) + (blocks & 0xFF), 4))
-        ptp_f.write(b'\x13')
+        ptp_f.write(str(0x13))
 
 if __name__ == "__main__":
     boardModel = sys.argv[1]
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     except:
         print("File not found!")
         exit(-1)
-    ptp_f = open(ptpFileName, "wb")
+    ptp_f = open(ptpFileName, "w")
     binFileSize = os.path.getsize(binFileName)
     print("Size of " + binFileName + ": " + str(binFileSize) + " bytes")
     convertToPtp(bin_f, ptp_f, startAddress, binFileSize, chunkSize)
