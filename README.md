@@ -6,9 +6,7 @@ Ths program is Python 3.x compliant, but it shouldn't be difficult to convert it
 
 ## Usage
 The syntax of this tool is:\
-`romptp.py file.bin file.ptp [start address < FFFF]`\
+`romptp.py -[k/s] file.bin file.ptp [start address < FFFF]`\
 For example, to convert the BASIC_1.1.BIN to SYM-1 paper tape, you must enter:\
-`romptp.py BASIC_1.1.BIN basic.ptp C000`\
+`romptp.py -s BASIC_1.1.BIN basic.ptp C000`\
 Right now, there are no plans to support variable length record lines, as there is no real need.
-
-KIM-1 paper tapes are not yet supported, they will be added soon.
