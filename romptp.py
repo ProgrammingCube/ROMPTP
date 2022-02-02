@@ -22,7 +22,7 @@ def convertToPtp(bin_f, ptp_f, address, size, chunkSize):
         line = bytearray()
         #print(str(dataBytes))
         ptp_f.write(';')        # print start of record
-        ptp_f.write(hex(16)[2:].upper())
+        ptp_f.write(hex(chunkSize)[2:].upper())
         #ptp_f.write(hex(address)[2:].upper())
         ptp_f.write("{:04x}".format(address).upper())
         ptp_f.write(dataBytes.hex().upper())
